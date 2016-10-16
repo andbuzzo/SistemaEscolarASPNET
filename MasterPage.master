@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="style.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="Imgs/favicon.ico" /> 
+    <title>Sistema Escolar</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style2 {
+            width: 98%;
+        }
+        .auto-style3 {
+            width: 176px;
+        }
+        .auto-style4 {
+            width: 282px;
+            height: 191px;
+        }
+        .auto-style5 {
+            height: 42px;
+            text-align: center;
+        }
+        .auto-style6 {
+            width:auto;
+        }
+        .auto-style7 {
+            width: 101px;
+            height: 55px;
+        }
+        .auto-style8 {
+            width: 117px;
+        }
+        .auto-style9 {
+            color: #FFFFFF;
+            border: 1px;
+        }
+        .auto-style10 {
+            text-align: left;
+        }
+        .auto-style11 {
+            background-color: #C12E2A;
+        }
+        .auto-style12 {
+            border-style: none;
+            border-color: inherit;
+            border-width: 1px;
+            color: #FFFFFF;
+            width: 959px;
+            text-align: center;
+        }
+        .auto-style13 {
+            font-size: small;
+        }
+        </style>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+    <div class="wrapper">
+
+       <div class="header">
+           
+           <table class="auto-style2">
+               <tr>
+                   <td class="auto-style3">
+                       <img alt="SisEscolar" class="auto-style4" src="Imgs/logo.png" /></td>
+                   <td><H1 class="auto-style5">SISTEMA ESCOLAR</H1></td>
+               </tr>
+           </table>
+           
+       </div>
+
+        <div class="nav">
+            <table cellpadding="0" cellspacing="0" class="auto-style2">
+                <tr>
+                    <td class="auto-style10">
+                        <asp:Button ID="btnhome" runat="server" CssClass="btn-danger disabled active" Text="HOME" Width="215px" Height="50px" OnClick="Button1_Click" style="color: #FFFFFF" PostBackUrl="~/home.aspx"/>
+                    </td>
+                    <td class="auto-style10">
+                        <asp:Button ID="btnpesquisar" runat="server" CssClass="btn-danger disabled active" OnClick="Button2_Click" Text="PESQUISAR" Width="215px" Height="50px" style="color: #FFFFFF" PostBackUrl="~/pesquisar.aspx"/>
+                    </td>
+                    <td class="auto-style10">
+                        <asp:Button ID="btncadastro" runat="server" CssClass="btn-danger disabled active" Text="CADASTRAR" Width="215px" Height="50px" style="color: #FFFFFF" PostBackUrl="~/cadastrar.aspx"/>
+                    </td>
+                    <td class="auto-style10">
+                        <asp:Button ID="btncontato" runat="server" CssClass="btn-danger disabled active" Text="MATRICULA" Width="215px" Height="50px" style="color: #FFFFFF" PostBackUrl="~/Matricula.aspx"/>
+                    </td>
+                    <td class="auto-style10">
+                        <asp:Button ID="Button5" runat="server" CssClass="btn-danger disabled active" Text="CONTATO" Width="215px" Height="50px" style="color: #FFFFFF" PostBackUrl="~/contato.aspx"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="main">
+             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="sidebar">
+            <div class="auto-style11">
+                <h3 class="auto-style9"><strong>Menu Rápido</strong></h3>
+                <div style="display:block; margin-left:auto; margin-right:auto;">
+
+                    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
+                        <Items>
+                            <asp:MenuItem Text="New Item" Value="New Item"></asp:MenuItem>
+                        </Items>
+                        <StaticItemTemplate>
+                            <%# Eval("Text") %>
+                        </StaticItemTemplate>
+                    </asp:Menu>
+
+                </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+                <asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="183px" ShowGridLines="True" Width="197px">
+                    <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
+                    <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+                    <OtherMonthDayStyle ForeColor="#CC9966" />
+                    <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+                    <SelectorStyle BackColor="#FFCC66" />
+                    <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+                    <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+                </asp:Calendar>
+            </div>
+        </div>
+
+        <div class="footer">
+            <table class="auto-style6">
+                <tr>
+                    <td class="auto-style8" rowspan="2">
+                       <img alt="SisEscolar" class="auto-style7" src="Imgs/logo.png" /></td>
+                    <td class="auto-style12">
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server" CssClass="auto-style13" Font-Names="Verdana" Font-Size="12" PathSeparator=" : ">
+                            <CurrentNodeStyle ForeColor="#333333" />
+                            <NodeStyle Font-Bold="True" ForeColor="#7C6F57" />
+                            <PathSeparatorStyle Font-Bold="True" ForeColor="#5D7B9D" />
+                            <RootNodeStyle Font-Bold="True" ForeColor="#5D7B9D" />
+                        </asp:SiteMapPath>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style12">SisEscolar @ 2016 - Todos os Diretos Reservados</td>
+                </tr>
+            </table>
+        </div>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+     </form>
+</body>
+</html>
