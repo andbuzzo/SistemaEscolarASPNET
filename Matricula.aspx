@@ -68,7 +68,7 @@
             <tr>
                 <td class="auto-style16"><strong>Data Matricula:</strong></td>
                 <td>
-                    <asp:TextBox ID="txtdata" runat="server" Height="26px" Width="141px" OnTextChanged="txtdata_TextChanged"></asp:TextBox>
+                    <asp:TextBox ID="txtdata" runat="server" Height="26px" Width="141px" OnTextChanged="txtdata_TextChanged" ReadOnly="True"></asp:TextBox>
                 </td>
             </tr>
         </table>
